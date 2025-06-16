@@ -24,6 +24,7 @@ fn gen_table(base: i32, length: i32) {
         •Base: the number the generated multiplication table is based upon (Example: base*1, base*2, base*3..)
         •length: the length of the multiplication table (Example: length = 10 [n*1, n*2.. n*10])
     */ 
+    
     for num in 1..=length {
         println!("{}*{} = {}", base, num, base*num)
     }
