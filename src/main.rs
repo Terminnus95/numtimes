@@ -16,20 +16,34 @@
 
 use clap::Parser;
 
-fn gen_table(base: i32, length: i32) {
-    /*
-    Function that creates (and prints) a multiplication table based on the Args 
+/// Command line tool that prints out the multiplication table of a number
+#[derive(Parser)]
+#[command(author, version, about, long_about = None)]
 
-    Args:
-        •Base: the number the generated multiplication table is based upon (Example: base*1, base*2, base*3..)
-        •length: the length of the multiplication table (Example: length = 10 [n*1, n*2.. n*10])
-    */ 
-    
-    for num in 1..=length {
-        println!("{}*{} = {}", base, num, base*num)
-    }
+struct Args {
+    /// The base number of the multiplication table,
+    base: i32,
+
+    /// Number of times the base number will be multiplied
+    #[arg(default_value_t = 12)]
+    length: i32,
+
+    /// Reverse the order of the numbers («result = base*length» instead of «base*length = result») 
+    #[arg(short, long)]
+    reversed: bool
 }
 
 fn main() {
-    gen_table(5, 10)
+    let args = Args::parse();
+
+    // Print out the whole multiplication table
+    for num in 1..=args.length {
+        
+        // Choose the order of the number based off the «reversed» argument
+        if args.reversed {
+            println!("{} = {}×{}", args.base*num, args.base, num);
+        } else {
+            println!("{}×{} = {}", args.base, num, args.base*num);
+        }
+    }
 }
