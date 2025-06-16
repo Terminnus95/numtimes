@@ -1,5 +1,5 @@
 //    A command line tool that prints out the multiplication table of a number
-//    Copyright (C) 2025 Terminnus
+//    Copyright (C) 2025 Terminnus <terminnus95@gmail.com>
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -36,10 +36,10 @@ struct Args {
 fn main() {
     let args = Args::parse();
 
-    // Print out the whole multiplication table
+    // Print out the multiplication table
     for num in 1..=args.length {
         
-        // Choose the order of the number based off the «reversed» argument
+        // Choose the order of the numbers based off the «reversed» argument
         if args.reversed {
             println!("{} = {}×{}", args.base*num, args.base, num);
         } else {
