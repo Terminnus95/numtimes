@@ -4,7 +4,7 @@ Numtimes is a simple command-line tool written in Rust that prints out the multi
 ## Installation
 
 ### Through crates.io
-Numtimes is available on crates.io, you can install it like this:
+Numtimes is available on [crates.io](https://crates.io/crates/numtimes), you can install it like this:
 ```
 $ cargo install numtimes
 ```
@@ -22,7 +22,7 @@ $ cp /path/to/repo/target/release/numtimes /your/preferred/path
 ```
 
 ### Pre-Built Binaries
-Pre-built binaries are coming soon, stay tuned!
+For the time being we only have Binaries for x86_64 Linux, which you can download from [here](https://github.com/Terminnus95/numtimes/releases), binaries for other architectures (and for windows) are coming soon so stay tuned!
 
 ## Usage
 ```
