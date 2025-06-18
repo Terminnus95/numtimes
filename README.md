@@ -22,7 +22,7 @@ $ cp /path/to/repo/target/release/numtimes /your/preferred/path
 ```
 
 ### Pre-Built Binaries
-For the time being we only have Binaries for x86_64 Linux, which you can download from [here](https://github.com/Terminnus95/numtimes/releases), binaries for other architectures (and for windows) are coming soon so stay tuned!
+You can download binaries for Linux and Windows on x86_64 [here](https://github.com/Terminnus95/numtimes/releases)
 
 ## Usage
 ```
