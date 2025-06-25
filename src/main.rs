@@ -28,6 +28,10 @@ struct Args {
     #[arg(default_value_t = 12)]
     length: i32,
 
+    /// Only print the answer
+    #[arg(short, long)]
+    answer_only: bool,
+
     /// Reverse the order of the numbers («result = base*length» instead of «base*length = result») 
     #[arg(short, long)]
     reversed: bool
@@ -40,10 +44,15 @@ fn main() {
     for num in 1..=args.length {
         
         // Choose the order of the numbers based off the «reversed» argument
-        if args.reversed {
+        if args.reversed && !args.answer_only { // Also check if «answer_only» is false before printing
             println!("{} = {}×{}", args.base*num, args.base, num);
-        } else {
+        } else if !args.answer_only {
             println!("{}×{} = {}", args.base, num, args.base*num);
+        }
+
+        // Print only the answer if «answer_only» is true
+        if args.answer_only {
+            println!("{}", args.base*num)
         }
     }
 }
