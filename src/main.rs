@@ -19,7 +19,6 @@ use clap::Parser;
 /// Command line tool that prints out the multiplication table of a number
 #[derive(Parser)]
 #[command(author, version, about, long_about = None)]
-
 struct Args {
     /// The base number of the multiplication table,
     base: i32,
@@ -29,11 +28,11 @@ struct Args {
     length: i32,
 
     /// Only print the answer
-    #[arg(short, long)]
+    #[arg(short, long, group = "order")]
     answer_only: bool,
 
     /// Reverse the order of the numbers («result = base*length» instead of «base*length = result») 
-    #[arg(short, long)]
+    #[arg(short, long, group = "order")]
     reversed: bool
 }
 
@@ -42,17 +41,16 @@ fn main() {
 
     // Print out the multiplication table
     for num in 1..=args.length {
-        
-        // Choose the order of the numbers based off the «reversed» argument
-        if args.reversed && !args.answer_only { // Also check if «answer_only» is false before printing
+    
+        // Order the numbers based off the arguments
+        if args.reversed { // Print with the number order reversed
             println!("{} = {}×{}", args.base*num, args.base, num);
-        } else if !args.answer_only {
-            println!("{}×{} = {}", args.base, num, args.base*num);
-        }
 
-        // Print only the answer if «answer_only» is true
-        if args.answer_only {
-            println!("{}", args.base*num)
+        } else if args.answer_only { // Only print the answer
+            println!("{}", args.base*num);
+
+        } else { // Normal print (No modifications)
+            println!("{}×{} = {}", args.base, num, args.base*num);
         }
     }
 }
