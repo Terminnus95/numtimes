@@ -1,6 +1,12 @@
 # Numtimes
 Numtimes is a simple command-line tool written in Rust that prints out the multiplication table of a number.
 
+## Whats New?
+The latest release (1.1) adds the following:
+- **A new argument (--answer-only):** This argument will only print the result of every multiplication without the operation
+
+A full list of changes for this release and all others before can be found [here](https://github.com/Terminnus95/numtimes/blob/main/CHANGELOG.md)
+
 ## Installation
 
 ### Through crates.io
@@ -30,11 +36,12 @@ numtimes [OPTIONS] <BASE> [LENGTH]
 ```
 
 ### Arguments
-- **BASE:** The base number of the multiplication table
-- **LENGTH:** Number of times the base number will be multiplied (default: 12)
+- **Base:** The base number of the multiplication table
+- **Length:** Number of times the base number will be multiplied (default: 12)
 
 ### Options
 - **-r, --reversed:** Reverse the order of the numbers («result = base×length» instead of «base×length = result»)
+- **-a, --answer-only:** Only print out the answer
 - **-h, --help:** Show the help screen
 - **-V, --version:** Print version
 

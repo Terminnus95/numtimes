@@ -27,17 +27,17 @@ struct Args {
     #[arg(default_value_t = 12)]
     length: i32,
 
-    /// Only print the answer
+    /// Only print out the answer
     #[arg(short, long, group = "order")]
     answer_only: bool,
 
-    /// Reverse the order of the numbers («result = base*length» instead of «base*length = result») 
+    /// Reverse the order of the numbers («result = base×length» instead of «base×length = result») 
     #[arg(short, long, group = "order")]
     reversed: bool
 }
 
 fn main() {
-    let args = Args::parse();
+    let args = Args::parse(); 
 
     // Print out the multiplication table
     for num in 1..=args.length {
